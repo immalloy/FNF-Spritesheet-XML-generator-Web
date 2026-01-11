@@ -1,0 +1,123 @@
+:root {
+    --background: #1d1d1d;
+    --foreground: #f7f7f7;
+    --border-color: #4b4b4b;
+    --accent: #ff5151;
+}
+
+body.light-mode {
+    --background: #f7f7f7;
+    --foreground: #1d1d1d;
+    --border-color: #c2c2c2;
+    --accent: #cc2a2a;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#app-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.tab-button {
+    padding: 12px 16px;
+    border: 2px solid var(--border-color);
+    background: transparent;
+    color: var(--foreground);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.tab-button.active {
+    background-color: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+.tab-section {
+    display: none;
+    border: 2px solid var(--border-color);
+    padding: 16px;
+}
+
+.tab-section.active {
+    display: block;
+}
+
+.form-section {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px 20px;
+    margin-bottom: 16px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--foreground);
+}
+
+input[type="file"] {
+    padding: 6px 0;
+}
+
+button {
+    padding: 10px 16px;
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.error-box {
+    border: 2px solid #ff8080;
+    background: #3b1111;
+    padding: 10px 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width: 600px) {
+    #app-tabs {
+        grid-template-columns: 1fr;
+    }
+    .button-row {
+        flex-direction: column;
+    }
+}
